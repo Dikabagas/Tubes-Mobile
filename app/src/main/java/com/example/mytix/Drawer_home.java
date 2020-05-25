@@ -140,4 +140,8 @@ public class Drawer_home extends AppCompatActivity implements NavigationView.OnN
 
     public void btn_holiday(View view) {
     }
+
+    public void btn_history(MenuItem item) {
+        startActivity(new Intent(getApplicationContext(), History_page.class));
+    }
 }
