@@ -13,8 +13,4 @@ public class Pesawat_page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_pesawat_page);
     }
-
-    public void btn_garuda(View view) {
-        startActivity(new Intent(getApplicationContext(), Pembayaran.class));
-    }
 }

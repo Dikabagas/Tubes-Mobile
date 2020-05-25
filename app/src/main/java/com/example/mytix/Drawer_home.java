@@ -40,16 +40,19 @@ public class Drawer_home extends AppCompatActivity implements NavigationView.OnN
         setSliderViews();
 
         drawerLayout = findViewById(R.id.drawer);
-        toolbar = findViewById(R.id.toolbar);
         navigationView = findViewById(R.id.navigationView);
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDefaultDisplayHomeAsUpEnabled(true);
-        getSupportActionBar().setDisplayShowTitleEnabled(false);
         toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.drawerOpen,R.string.drawerClose);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
+    }
+
+    private void setupToolbar() {
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        toolbar.setTitle("Home");
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     private void setSliderViews(){
@@ -58,16 +61,20 @@ public class Drawer_home extends AppCompatActivity implements NavigationView.OnN
 
             switch (i){
                 case 0:
-                    sliderView.setImageUrl("https://www.dakwatuna.com/wp-content/uploads/2018/04/bioskop-cnn-indonesia.jpg");
+                    //sliderView.setImageUrl("https://www.dakwatuna.com/wp-content/uploads/2018/04/bioskop-cnn-indonesia.jpg");
+                    sliderView.setImageDrawable(R.drawable.bioskop);
                     break;
                 case 1:
-                    sliderView.setImageUrl("https://www.infopenerbangan.com/wp-content/uploads/2018/06/penerbangan-780x400.jpg");
+                    //sliderView.setImageUrl("https://www.infopenerbangan.com/wp-content/uploads/2018/06/penerbangan-780x400.jpg");
+                    sliderView.setImageDrawable(R.drawable.penerbangan);
                     break;
                 case 2:
-                    sliderView.setImageUrl("https://asset.kompas.com/crops/Sopi2ulRUWGp-jhrZDHqkLPvIDw=/156x0:1000x563/750x500/data/photo/2019/11/03/5dbe423d433c4.jpg");
+                    //sliderView.setImageUrl("https://asset.kompas.com/crops/Sopi2ulRUWGp-jhrZDHqkLPvIDw=/156x0:1000x563/750x500/data/photo/2019/11/03/5dbe423d433c4.jpg");
+                    sliderView.setImageDrawable(R.drawable.kereta);
                     break;
                 case 3:
-                    sliderView.setImageUrl("https://www.dbs.com/iwov-resources/images/newsroom/indonesia/Blog/tempat%20wisata%20indonesia/Image%20Banner%20-%20Wisata%20Indonesia.jpg");
+                    //sliderView.setImageUrl("https://www.dbs.com/iwov-resources/images/newsroom/indonesia/Blog/tempat%20wisata%20indonesia/Image%20Banner%20-%20Wisata%20Indonesia.jpg");
+                    sliderView.setImageDrawable(R.drawable.liburan);
                     break;
             }
 
@@ -83,6 +90,7 @@ public class Drawer_home extends AppCompatActivity implements NavigationView.OnN
 
             sliderLayout.addSliderView(sliderView);
         }
+        setupToolbar();
     }
 
     @Override
@@ -93,6 +101,9 @@ public class Drawer_home extends AppCompatActivity implements NavigationView.OnN
                 break;
             case R.id.setting:
                 Toast.makeText(Drawer_home.this, "Setting Selected", Toast.LENGTH_SHORT).show();
+                break;
+            case R.id.history:
+                Toast.makeText(Drawer_home.this, "History Selected", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.contact:
                 Toast.makeText(Drawer_home.this, "Contact Us Selected", Toast.LENGTH_SHORT).show();
@@ -115,6 +126,7 @@ public class Drawer_home extends AppCompatActivity implements NavigationView.OnN
     }
 
     public void btn_krt(View view) {
+        startActivity(new Intent(getApplicationContext(), Kereta_page.class));
     }
 
     public void btn_bus(View view) {

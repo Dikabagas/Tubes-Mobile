@@ -9,7 +9,7 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".Pembayaran"></activity>
+        <activity android:name=".Kereta_page"></activity>
         <activity android:name=".Pesawat_page" />
         <activity android:name=".Drawer_home" />
         <activity android:name=".Register_page" />
