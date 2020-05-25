@@ -24,21 +24,30 @@
             android:orientation="vertical"
             android:paddingTop="30dp">
 
-            <EditText
-                android:layout_width="fill_parent"
-                android:layout_height="wrap_content"
-                android:drawableStart="@drawable/username"
-                android:layout_marginTop="10dp"
-                android:drawablePadding="5dp"
-                android:paddingLeft="5dp"
-                android:hint="Username"
-                android:inputType="textEmailAddress" />
+            <com.google.android.material.textfield.TextInputLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <EditText
+                    android:id="@+id/email"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:drawableStart="@drawable/username"
+                    android:layout_marginTop="10dp"
+                    android:drawablePadding="5dp"
+                    android:paddingLeft="5dp"
+                    android:hint="Username"
+                    android:imeOptions="actionNext"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:textSize="16sp"/>
+            </com.google.android.material.textfield.TextInputLayout>
 
             <com.google.android.material.textfield.TextInputLayout
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 app:passwordToggleEnabled="true">
                 <EditText
+                    android:id="@+id/pass"
                     android:layout_width="fill_parent"
                     android:layout_height="wrap_content"
                     android:layout_marginTop="3dp"
@@ -46,8 +55,10 @@
                     android:drawablePadding="5dp"
                     android:paddingLeft="5dp"
                     android:hint="Password"
-                    android:inputType="numberPassword"
-                    android:imeOptions="actionDone"/>
+                    android:inputType="textPassword"
+                    android:imeOptions="actionDone"
+                    android:maxLines="1"
+                    android:textSize="16sp"/>
             </com.google.android.material.textfield.TextInputLayout>
 
 
@@ -59,6 +70,7 @@
                 android:text="Forgot Password?"/>
 
             <Button
+                android:id="@+id/login"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:layout_marginTop="23dp"
@@ -71,6 +83,7 @@
                 android:onClick="btn_login"/>
 
             <Button
+                android:id="@+id/register"
                 android:layout_width="fill_parent"
                 android:layout_height="wrap_content"
                 android:background="@drawable/button_rounded2"

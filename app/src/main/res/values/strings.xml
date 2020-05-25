@@ -2,5 +2,6 @@
     <string name="app_name">MyTIX</string>
     <string name="drawerOpen">drawerOpen</string>
     <string name="drawerClose">drawerClose</string>
-
+    <string name="batal">Batal</string>
+    <string name="keluar">Keluar</string>
 </resources>

@@ -3,21 +3,9 @@
     xmlns:tools="http://schemas.android.com/tools"
     tools:showIn="navigationView">
     <item
-        android:id="@+id/profile"
-        android:icon="@drawable/ic_person_black_24dp"
-        android:title="Profile"/>
-
-    <item
         android:id="@+id/setting"
         android:icon="@drawable/ic_settings"
         android:title="Settings"/>
-
-    <item
-        android:id="@+id/history"
-        android:icon="@drawable/ic_history"
-        android:title="Riwayat Transaksi"
-        android:clickable="true"
-        android:onClick="btn_history"/>
 
     <item
         android:id="@+id/contact"
@@ -33,10 +21,5 @@
         android:id="@+id/about"
         android:icon="@drawable/ic_about"
         android:title="About"/>
-
-    <item
-        android:id="@+id/logout"
-        android:icon="@drawable/ic_logout"
-        android:title="Logout"/>
 
 </menu>

@@ -3,20 +3,20 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#448AFF"
+    android:background="#fff"
     android:orientation="vertical">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tbKrl"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#448AFF" />
+        android:background="@drawable/bg_wave"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/tbKrl"
-        android:background="#448AFF">
+        android:layout_below="@+id/tbKrl">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 app:cardCornerRadius="10dp"
-                app:cardElevation="3dp"
+                app:cardElevation="4dp"
                 app:strokeColor="@color/colorPrimary"
                 app:strokeWidth="2dp">
 
@@ -46,7 +46,7 @@
                         android:gravity="center"
                         android:text="Tujuan Perjalanan"
                         android:textAllCaps="true"
-                        android:textColor="#000000"
+                        android:textColor="@color/colorPrimary"
                         android:textSize="19sp"
                         android:textStyle="bold" />
 
@@ -55,14 +55,13 @@
                         android:layout_height="wrap_content"
                         android:gravity="center_vertical"
                         android:text="Kota Asal"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
                         android:textColor="#000000" />
 
                     <Spinner
                         android:id="@+id/asal"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:background="#FFFFFF" />
+                        android:layout_height="50dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -70,15 +69,14 @@
                         android:layout_marginTop="8dp"
                         android:gravity="center_vertical"
                         android:text="Tujuan"
-                        android:textAppearance="@style/TextAppearance.AppCompat.Body1"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
                         android:textColor="#020202" />
 
                     <Spinner
                         android:id="@+id/tujuan"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
-                        android:layout_weight="1"
-                        android:background="#FFFFFF" />
+                        android:layout_weight="1" />
 
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
@@ -88,7 +86,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 app:cardCornerRadius="10dp"
-                app:cardElevation="3dp"
+                app:cardElevation="4dp"
                 app:strokeColor="@color/colorPrimary"
                 app:strokeWidth="2dp">
 
@@ -105,7 +103,7 @@
                         android:gravity="center"
                         android:text="Tanggal Perjalanan"
                         android:textAllCaps="true"
-                        android:textColor="#000000"
+                        android:textColor="@color/colorPrimary"
                         android:textSize="19sp"
                         android:textStyle="bold" />
 
@@ -113,13 +111,12 @@
                         android:id="@+id/tanggal_berangkat"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:background="#FFFFFF"
                         android:drawableStart="@drawable/ic_date_foreground"
                         android:drawablePadding="20dp"
                         android:hint="Tanggal Berangkat"
                         android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
-                        android:textColor="#000000"
-                        android:textColorHint="#000000" />
+                        android:textColor="@color/colorPrimary"
+                        android:textColorHint="#BACBCF" />
 
                 </LinearLayout>
 
@@ -130,7 +127,7 @@
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 app:cardCornerRadius="10dp"
-                app:cardElevation="3dp"
+                app:cardElevation="4dp"
                 app:strokeColor="@color/colorPrimary"
                 app:strokeWidth="2dp">
 
@@ -148,7 +145,7 @@
                         android:gravity="center"
                         android:text="JUMLAH PENUMPANG"
                         android:textAllCaps="true"
-                        android:textColor="#000000"
+                        android:textColor="@color/colorPrimary"
                         android:textSize="19sp"
                         android:textStyle="bold" />
 
@@ -162,8 +159,7 @@
                     <Spinner
                         android:id="@+id/dewasa"
                         android:layout_width="match_parent"
-                        android:layout_height="50dp"
-                        android:background="#FFFFFF" />
+                        android:layout_height="50dp" />
 
                     <TextView
                         android:layout_width="wrap_content"
@@ -177,8 +173,7 @@
                         android:id="@+id/anak"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
-                        android:layout_marginBottom="8dp"
-                        android:background="#FFFFFF" />
+                        android:layout_marginBottom="8dp" />
 
                 </LinearLayout>
 
@@ -191,12 +186,11 @@
                 android:layout_marginLeft="24dp"
                 android:layout_marginTop="8dp"
                 android:layout_marginRight="24dp"
-                android:background="#0F27E6"
                 android:text="Booking Sekarang"
-                android:textColor="#000000"
+                android:textColor="#fff"
                 android:textSize="16sp"
                 android:theme="@style/Theme.MaterialComponents.Light"
-                app:backgroundTint="#0F27E6"
+                app:backgroundTint="#2F9FFF"
                 app:cornerRadius="50dp" />
 
         </LinearLayout>

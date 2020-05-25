@@ -5,35 +5,35 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".History_page">
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbHistory"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="#448AFF"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
-<androidx.appcompat.widget.Toolbar
-    android:id="@+id/tbHistory"
-    android:layout_width="match_parent"
-    android:layout_height="?attr/actionBarSize"
-    android:background="#448AFF"
-    android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
-
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:layout_below="@+id/tbHistory">
-
-    <ListView
-        android:id="@+id/list_booking"
+    <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:divider="@null"
-        android:dividerHeight="0dp" />
+        android:layout_below="@+id/tbHistory">
 
+        <ListView
+            android:id="@+id/list_booking"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:divider="@null"
+            android:dividerHeight="0dp" />
+
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/noHistory"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerInParent="true"
+        android:text="Tidak Ada Riwayat Booking"
+        android:textColor="@color/colorPrimary"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        android:visibility="gone" />
 </RelativeLayout>
-
-<TextView
-    android:id="@+id/noHistory"
-    android:layout_width="wrap_content"
-    android:layout_height="wrap_content"
-    android:layout_centerInParent="true"
-    android:text="Tidak Ada Riwayat Booking"
-    android:textColor="@color/colorPrimary"
-    android:textSize="20sp"
-    android:textStyle="bold"
-    android:visibility="gone" />

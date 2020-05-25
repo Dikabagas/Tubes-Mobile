@@ -54,10 +54,10 @@ public class Kereta_page extends AppCompatActivity {
         setContentView(R.layout.activity_kereta_page);
 
 
-        final String[] asal = {"Jakarta", "Bandung", "Purwokerto", "Yogyakarta", "Surabaya"};
-        final String[] tujuan = {"Jakarta", "Bandung", "Purwokerto", "Yogyakarta", "Surabaya"};
-        final String[] dewasa = {"0", "1", "2", "3", "4", "5"};
-        final String[] anak = {"0", "1", "2", "3", "4", "5"};
+        final String[] asal = {"-- Pilih --","Jakarta", "Bandung", "Purwokerto", "Yogyakarta", "Surabaya"};
+        final String[] tujuan = {"-- Pilih --","Jakarta", "Bandung", "Purwokerto", "Yogyakarta", "Surabaya"};
+        final String[] dewasa = {"0", "1", "2", "3", "4", "5", "6", "7"};
+        final String[] anak = {"0", "1", "2", "3", "4", "5", "6", "7"};
 
         spinAsal = findViewById(R.id.asal);
         spinTujuan = findViewById(R.id.tujuan);

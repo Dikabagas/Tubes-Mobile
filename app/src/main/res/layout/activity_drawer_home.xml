@@ -6,7 +6,7 @@
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:id="@+id/drawer"
     tools:openDrawer="end"
-    android:background="#448AFF">
+    android:background="#fff">
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -16,9 +16,16 @@
             android:layout_width="match_parent"
             android:layout_height="?attr/actionBarSize"
             android:id="@+id/toolbar"
-            app:titleTextColor="#fff"
-            android:background="#448AFF"
+            android:background="@drawable/bg_wave"
             android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
+
+        <LinearLayout
+            android:id="@+id/llCurved"
+            android:layout_width="match_parent"
+            android:layout_height="30dp"
+            android:background="@drawable/bg_curve"
+            android:orientation="horizontal"
+            android:layout_marginTop="56dp"/>
 
         <com.smarteist.autoimageslider.SliderLayout
             android:id="@+id/imageSlider"
@@ -52,7 +59,11 @@
             android:layout_margin="3dp"
             android:foreground="?attr/selectableItemBackground"
             android:clickable="true"
-            android:onClick="btn_pswt">
+            app:cardElevation="4dp"
+            app:strokeWidth="4dp"
+            android:onClick="btn_pswt"
+            app:strokeColor="#2F9FFF"
+            app:cardCornerRadius="10dp">
             
             <LinearLayout
                 android:layout_width="match_parent"
@@ -91,7 +102,11 @@
             android:layout_margin="3dp"
             android:foreground="?attr/selectableItemBackground"
             android:clickable="true"
-            android:onClick="btn_krt">
+            app:cardElevation="4dp"
+            app:strokeWidth="4dp"
+            android:onClick="btn_krt"
+            app:strokeColor="#2F9FFF"
+            app:cardCornerRadius="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -139,7 +154,11 @@
             android:layout_margin="3dp"
             android:foreground="?attr/selectableItemBackground"
             android:clickable="true"
-            android:onClick="btn_movie">
+            app:cardElevation="4dp"
+            app:strokeWidth="4dp"
+            android:onClick="btn_movie"
+            app:strokeColor="#2F9FFF"
+            app:cardCornerRadius="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"
@@ -178,7 +197,11 @@
             android:layout_margin="3dp"
             android:foreground="?attr/selectableItemBackground"
             android:clickable="true"
-            android:onClick="btn_holiday">
+            app:cardElevation="4dp"
+            app:strokeWidth="4dp"
+            android:onClick="btn_holiday"
+            app:strokeColor="#2F9FFF"
+            app:cardCornerRadius="10dp">
 
             <LinearLayout
                 android:layout_width="match_parent"

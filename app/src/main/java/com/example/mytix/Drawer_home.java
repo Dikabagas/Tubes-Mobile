@@ -41,18 +41,15 @@ public class Drawer_home extends AppCompatActivity implements NavigationView.OnN
 
         drawerLayout = findViewById(R.id.drawer);
         navigationView = findViewById(R.id.navigationView);
+        Toolbar toolbar = findViewById(R.id.toolbar);
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+        getSupportActionBar().setDisplayShowTitleEnabled(false);
         toggle = new ActionBarDrawerToggle(this,drawerLayout,toolbar,R.string.drawerOpen,R.string.drawerClose);
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
 
-    }
-
-    private void setupToolbar() {
-        Toolbar toolbar = findViewById(R.id.toolbar);
-        toolbar.setTitle("Home");
-        setSupportActionBar(toolbar);
-        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
     }
 
     private void setSliderViews(){
@@ -90,20 +87,13 @@ public class Drawer_home extends AppCompatActivity implements NavigationView.OnN
 
             sliderLayout.addSliderView(sliderView);
         }
-        setupToolbar();
     }
 
     @Override
     public boolean onNavigationItemSelected(@NonNull MenuItem item) {
         switch(item.getItemId()){
-            case R.id.profile:
-                Toast.makeText(Drawer_home.this, "Profile Selected", Toast.LENGTH_SHORT).show();
-                break;
             case R.id.setting:
                 Toast.makeText(Drawer_home.this, "Setting Selected", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.history:
-                Toast.makeText(Drawer_home.this, "History Selected", Toast.LENGTH_SHORT).show();
                 break;
             case R.id.contact:
                 Toast.makeText(Drawer_home.this, "Contact Us Selected", Toast.LENGTH_SHORT).show();
@@ -113,9 +103,6 @@ public class Drawer_home extends AppCompatActivity implements NavigationView.OnN
                 break;
             case R.id.about:
                 Toast.makeText(Drawer_home.this, "About Us Selected", Toast.LENGTH_SHORT).show();
-                break;
-            case R.id.logout:
-                Toast.makeText(Drawer_home.this, "Logout Selected", Toast.LENGTH_SHORT).show();
                 break;
         }
         return false;
@@ -129,19 +116,10 @@ public class Drawer_home extends AppCompatActivity implements NavigationView.OnN
         startActivity(new Intent(getApplicationContext(), Kereta_page.class));
     }
 
-    public void btn_bus(View view) {
-    }
-
-    public void btn_taxi(View view) {
-    }
-
     public void btn_movie(View view) {
+        Toast.makeText(getApplicationContext(), "Mohon maaf, sistem sedang dalam pengembangan.", Toast.LENGTH_LONG).show();
     }
 
     public void btn_holiday(View view) {
-    }
-
-    public void btn_history(MenuItem item) {
-        startActivity(new Intent(getApplicationContext(), History_page.class));
     }
 }
