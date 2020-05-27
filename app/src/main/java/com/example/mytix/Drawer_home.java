@@ -10,9 +10,12 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
+import com.example.mytix.adapter.AlertDialogManager;
+import com.example.mytix.session.SessionManager;
 import com.google.android.material.navigation.NavigationView;
 import com.smarteist.autoimageslider.DefaultSliderView;
 import com.smarteist.autoimageslider.IndicatorAnimations;
@@ -26,6 +29,9 @@ public class Drawer_home extends AppCompatActivity implements NavigationView.OnN
     NavigationView navigationView;
     ActionBarDrawerToggle toggle;
     SliderLayout sliderLayout;
+
+    AlertDialogManager alert = new AlertDialogManager();
+    SessionManager session;
 
 
     @Override
@@ -49,6 +55,9 @@ public class Drawer_home extends AppCompatActivity implements NavigationView.OnN
         drawerLayout.addDrawerListener(toggle);
         toggle.syncState();
         navigationView.setNavigationItemSelectedListener(this);
+
+        session = new SessionManager(getApplicationContext());
+        session.checkLogin();
 
     }
 
@@ -101,9 +110,6 @@ public class Drawer_home extends AppCompatActivity implements NavigationView.OnN
             case R.id.rate:
                 Toast.makeText(Drawer_home.this, "Rate Us Selected", Toast.LENGTH_SHORT).show();
                 break;
-            case R.id.about:
-                Toast.makeText(Drawer_home.this, "About Us Selected", Toast.LENGTH_SHORT).show();
-                break;
         }
         return false;
     }
@@ -121,5 +127,11 @@ public class Drawer_home extends AppCompatActivity implements NavigationView.OnN
     }
 
     public void btn_holiday(View view) {
+    }
+
+    public void btn_profile(View view) {
+    }
+
+    public void btn_about(View view) {
     }
 }

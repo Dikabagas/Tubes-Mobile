@@ -52,7 +52,7 @@
                     android:gravity="start"
                     android:textColor="@color/black"
                     android:textStyle="bold"
-                    tools:text="ID : " />
+                    tools:text="ID : 1" />
 
                 <TextView
                     android:id="@+id/tanggal"
@@ -61,7 +61,8 @@
                     android:layout_weight="2"
                     android:gravity="end"
                     android:textColor="@color/black"
-                    android:textStyle="bold" />
+                    android:textStyle="bold"
+                    tools:text="Tanggal : 05 Juli 2020"/>
             </LinearLayout>
 
             <LinearLayout

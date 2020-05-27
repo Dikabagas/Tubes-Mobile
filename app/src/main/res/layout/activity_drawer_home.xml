@@ -61,6 +61,49 @@
             android:clickable="true"
             app:cardElevation="4dp"
             app:strokeWidth="4dp"
+            android:onClick="btn_profile"
+            app:strokeColor="#2F9FFF"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="#fff">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/rounded"
+                    android:padding="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_person_black_24dp"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:text="Profile"/>
+
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="1px"
+                    android:layout_marginTop="5dp"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <!--Tombol 2-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="170dp"
+            android:layout_height="128dp"
+            android:layout_margin="3dp"
+            android:foreground="?attr/selectableItemBackground"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            app:strokeWidth="4dp"
             android:onClick="btn_pswt"
             app:strokeColor="#2F9FFF"
             app:cardCornerRadius="10dp">
@@ -74,8 +117,8 @@
                 android:background="#fff">
                 
                 <ImageView
-                    android:layout_width="64dp"
-                    android:layout_height="64dp"
+                    android:layout_width="62dp"
+                    android:layout_height="62dp"
                     android:background="@drawable/rounded"
                     android:padding="10dp"
                     android:layout_marginTop="10dp"
@@ -94,8 +137,17 @@
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
-        <!--Tombol 2-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:clipToPadding="false"
+        android:layout_marginTop="245dp">
+
+        <!--Tombol 1-->
         <androidx.cardview.widget.CardView
             android:layout_width="170dp"
             android:layout_height="128dp"
@@ -137,17 +189,8 @@
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
-    </LinearLayout>
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="horizontal"
-        android:gravity="center"
-        android:clipToPadding="false"
-        android:layout_marginTop="245dp">
-
-        <!--Tombol 1-->
+        <!--Tombol 2-->
         <androidx.cardview.widget.CardView
             android:layout_width="170dp"
             android:layout_height="128dp"
@@ -189,8 +232,17 @@
 
             </LinearLayout>
         </androidx.cardview.widget.CardView>
+    </LinearLayout>
 
-        <!--Tombol 2-->
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:gravity="center"
+        android:clipToPadding="false"
+        android:layout_marginTop="515dp">
+
+        <!--Tombol 1-->
         <androidx.cardview.widget.CardView
             android:layout_width="170dp"
             android:layout_height="128dp"
@@ -234,6 +286,48 @@
             </LinearLayout>
         </androidx.cardview.widget.CardView>
 
+        <!--Tombol 2-->
+        <androidx.cardview.widget.CardView
+            android:layout_width="170dp"
+            android:layout_height="128dp"
+            android:layout_margin="3dp"
+            android:foreground="?attr/selectableItemBackground"
+            android:clickable="true"
+            app:cardElevation="4dp"
+            app:strokeWidth="4dp"
+            android:onClick="btn_about"
+            app:strokeColor="#2F9FFF"
+            app:cardCornerRadius="10dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:layout_gravity="center"
+                android:gravity="center"
+                android:background="#fff">
+
+                <ImageView
+                    android:layout_width="64dp"
+                    android:layout_height="64dp"
+                    android:background="@drawable/rounded"
+                    android:padding="10dp"
+                    android:layout_marginTop="10dp"
+                    android:src="@drawable/ic_about"/>
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textStyle="bold"
+                    android:layout_marginTop="10dp"
+                    android:text="About Us"/>
+
+                <View
+                    android:layout_width="100dp"
+                    android:layout_height="1px"
+                    android:layout_marginTop="5dp"/>
+
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
     </LinearLayout>
 
 </androidx.drawerlayout.widget.DrawerLayout>

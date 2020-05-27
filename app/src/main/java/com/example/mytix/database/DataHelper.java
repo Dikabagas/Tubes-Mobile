@@ -8,7 +8,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class DataHelper extends SQLiteOpenHelper {
-    public static final String DATABASE_NAME = "db_travel";
+    public static final String DATABASE_NAME = "db_tiket";
     public static final String TABLE_USER = "tb_user";
     public static final String COL_USERNAME = "username";
     public static final String COL_PASSWORD = "password";
@@ -44,7 +44,7 @@ public class DataHelper extends SQLiteOpenHelper {
                 COL_HARGA_DEWASA + " TEXT, " + COL_HARGA_ANAK + " TEXT, " + COL_HARGA_TOTAL +
                 " TEXT, FOREIGN KEY(" + COL_USERNAME + ") REFERENCES " + TABLE_USER
                 + ", FOREIGN KEY(" + COL_ID_BOOK + ") REFERENCES " + TABLE_BOOK + ")");
-        db.execSQL("insert into " + TABLE_USER + " values ('dika@gmail.com','dika','Dik Bagas','081234567890');");
+        db.execSQL("insert into " + TABLE_USER + " values ('andhika@gmail.com','dika','Dika Bagaskara');");
     }
 
     @Override
