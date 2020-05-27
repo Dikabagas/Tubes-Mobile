@@ -173,7 +173,11 @@
                 android:layout_height="56dp"
                 android:layout_marginLeft="24dp"
 <<<<<<< HEAD
+<<<<<<< HEAD
                 android:layout_marginTop="80dp"
+=======
+                android:layout_marginTop="8dp"
+>>>>>>> 8773ed80897ca39f34a0956790d951091d2239cd
 =======
                 android:layout_marginTop="8dp"
 >>>>>>> 8773ed80897ca39f34a0956790d951091d2239cd
