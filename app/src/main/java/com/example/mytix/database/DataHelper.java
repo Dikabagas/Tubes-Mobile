@@ -28,7 +28,7 @@ public class DataHelper extends SQLiteOpenHelper {
     private SQLiteDatabase db;
 
     public DataHelper(Context context) {
-        super(context, DATABASE_NAME, null, 1);
+        super(context, DATABASE_NAME, null,1);
     }
 
     @Override
@@ -44,7 +44,7 @@ public class DataHelper extends SQLiteOpenHelper {
                 COL_HARGA_DEWASA + " TEXT, " + COL_HARGA_ANAK + " TEXT, " + COL_HARGA_TOTAL +
                 " TEXT, FOREIGN KEY(" + COL_USERNAME + ") REFERENCES " + TABLE_USER
                 + ", FOREIGN KEY(" + COL_ID_BOOK + ") REFERENCES " + TABLE_BOOK + ")");
-        db.execSQL("insert into " + TABLE_USER + " values ('andhika@gmail.com','dika','Dika Bagaskara');");
+        db.execSQL("insert into " + TABLE_USER + " values ('Andhika@gmail.com','dika','Dika Bagas');");
     }
 
     @Override
