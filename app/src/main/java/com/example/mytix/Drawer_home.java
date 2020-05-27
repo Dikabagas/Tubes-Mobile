@@ -127,6 +127,7 @@ public class Drawer_home extends AppCompatActivity implements NavigationView.OnN
     }
 
     public void btn_holiday(View view) {
+        startActivity(new Intent(getApplicationContext(), Holiday_page.class));
     }
 
     public void btn_profile(View view) {
