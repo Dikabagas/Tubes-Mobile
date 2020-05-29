@@ -1,9 +1,5 @@
 package com.example.mytix;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.database.Cursor;
@@ -24,9 +20,8 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
-import com.example.mytix.R;
-
-
+import com.example.mytix.database.DataHelper;
+import com.example.mytix.session.SessionManager;
 
 import java.util.Calendar;
 import java.util.HashMap;
@@ -34,10 +29,10 @@ import java.util.HashMap;
 public class Kereta_page extends AppCompatActivity {
 
     protected Cursor cursor;
-
+    DataHelper dbHelper;
     SQLiteDatabase db;
     Spinner spinAsal, spinTujuan, spinDewasa, spinAnak;
-
+    SessionManager session;
     String email;
     int id_book;
     public String sAsal, sTujuan, sTanggal, sDewasa, sAnak;
@@ -53,11 +48,13 @@ public class Kereta_page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_kereta_page);
 
+        dbHelper = new DataHelper(Kereta_page.this);
+        db = dbHelper.getReadableDatabase();
 
         final String[] asal = {"Jakarta", "Bandung", "Purwokerto", "Yogyakarta", "Surabaya"};
         final String[] tujuan = {"Jakarta", "Bandung", "Purwokerto", "Yogyakarta", "Surabaya"};
-        final String[] dewasa = {"0", "1", "2", "3", "4", "5", "6", "7"};
-        final String[] anak = {"0", "1", "2", "3", "4", "5", "6", "7"};
+        final String[] dewasa = {"0", "1", "2", "3", "4", "5"};
+        final String[] anak = {"0", "1", "2", "3", "4", "5"};
 
         spinAsal = findViewById(R.id.asal);
         spinTujuan = findViewById(R.id.tujuan);
@@ -133,7 +130,9 @@ public class Kereta_page extends AppCompatActivity {
         etTanggal = findViewById(R.id.tanggal_berangkat);
         etTanggal.setInputType(InputType.TYPE_NULL);
         etTanggal.requestFocus();
-
+        session = new SessionManager(getApplicationContext());
+        HashMap<String, String> user = session.getUserDetails();
+        email = user.get(SessionManager.KEY_EMAIL);
         setDateTimeField();
 
         btnBook.setOnClickListener(new View.OnClickListener() {
