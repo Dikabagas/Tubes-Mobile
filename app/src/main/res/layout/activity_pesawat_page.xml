@@ -1,163 +1,200 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_welcome"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Pesawat_page"
-    android:background="#448AFF">
+    android:background="#fff"
+    android:orientation="vertical">
 
-    <TextView
-        android:text="TIKET PESAWAT"
-        android:textColor="#fff"
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/tbPswt"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_alignParentTop="true"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="30dp"
-        android:id="@+id/textView2"
-        android:textAlignment="center"
-        android:textSize="30sp"
-        android:textStyle="normal|bold"
-        android:fontFamily="@font/paladinscondensed"/>
+        android:layout_height="?attr/actionBarSize"
+        android:background="@drawable/bg_wave"
+        android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar"/>
 
-    <TextView
-        android:id="@+id/textView3"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_below="@+id/textView2"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="67dp"
-        android:text="Selamat Datang Pelanggan Terhormat"
-        android:textColor="#fff"
-        android:layout_marginLeft="7dp"
-        android:textSize="19sp"
-        android:textStyle="normal|bold" />
+        android:layout_height="match_parent"
+        android:layout_below="@+id/tbPswt">
 
-    <TextView
-        android:text="Terima Kasih Telah Menggunakan Aplikasi Kami Untuk Pemesanan Tiket Pesawat Anda"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView4"
-        android:layout_below="@+id/textView3"
-        android:textColor="#fff"
-        android:layout_marginLeft="7dp"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginTop="10dp"
-        android:textSize="18sp" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="245dp"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal"
-        >
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="4dp"
+                app:strokeColor="@color/colorPrimary"
+                app:strokeWidth="2dp">
 
-        <ImageView
-            android:layout_width="105dp"
-            android:layout_height="105dp"
-            android:layout_gravity="left"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/garuda"
-            android:clickable="true"
-            android:layout_marginLeft="18dp"
-            android:onClick="btn_garuda"/>
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center"
+                        android:text="Tujuan Perjalanan"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="19sp"
+                        android:textStyle="bold" />
 
-        <ImageView
-            android:layout_width="105dp"
-            android:layout_height="105dp"
-            android:layout_gravity="left"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/etihad"
-            android:clickable="true"
-            android:layout_marginLeft="18dp"/>
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:text="Kota Asal"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        android:textColor="#000000" />
 
-        <ImageView
-            android:layout_width="105dp"
-            android:layout_height="105dp"
-            android:layout_gravity="left"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/airasia"
-            android:clickable="true"
-            android:layout_marginLeft="18dp"
-            android:layout_marginRight="20dp"/>
-    </LinearLayout>
+                    <Spinner
+                        android:id="@+id/asal"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="385dp"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal"
-        >
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:gravity="center_vertical"
+                        android:text="Tujuan"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        android:textColor="#020202" />
 
-        <ImageView
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_gravity="left"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/citilink"
-            android:clickable="true"
-            android:layout_marginLeft="18dp"/>
+                    <Spinner
+                        android:id="@+id/tujuan"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_weight="1" />
 
-        <ImageView
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_gravity="left"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/batik"
-            android:clickable="true"
-            android:layout_marginLeft="18dp"/>
+                </LinearLayout>
+            </androidx.cardview.widget.CardView>
 
-        <ImageView
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_gravity="left"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/lion"
-            android:clickable="true"
-            android:layout_marginLeft="18dp"
-            android:layout_marginRight="8dp"/>
-    </LinearLayout>
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="4dp"
+                app:strokeColor="@color/colorPrimary"
+                app:strokeWidth="2dp">
 
-    <LinearLayout
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="530dp"
-        android:gravity="center_horizontal"
-        android:orientation="horizontal"
-        >
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
 
-        <ImageView
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_gravity="left"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/british"
-            android:clickable="true"
-            android:layout_marginLeft="18dp"/>
+                    <TextView
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center"
+                        android:text="Tanggal Perjalanan"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="19sp"
+                        android:textStyle="bold" />
 
-        <ImageView
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_gravity="left"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/sriwijaya"
-            android:clickable="true"
-            android:layout_marginLeft="18dp"/>
+                    <EditText
+                        android:id="@+id/tanggal_berangkat"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:drawableStart="@drawable/ic_date_foreground"
+                        android:drawablePadding="20dp"
+                        android:hint="Tanggal Berangkat"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        android:textColor="@color/colorPrimary"
+                        android:textColorHint="#BACBCF" />
 
-        <ImageView
-            android:layout_width="110dp"
-            android:layout_height="110dp"
-            android:layout_gravity="left"
-            android:layout_marginTop="10dp"
-            android:background="@drawable/emirates"
-            android:clickable="true"
-            android:layout_marginLeft="18dp"
-            android:layout_marginRight="20dp"/>
-    </LinearLayout>
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="5dp"
+                app:cardCornerRadius="10dp"
+                app:cardElevation="4dp"
+                app:strokeColor="@color/colorPrimary"
+                app:strokeWidth="2dp">
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:padding="10dp">
+
+                    <TextView
+                        android:id="@+id/coba"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginBottom="8dp"
+                        android:gravity="center"
+                        android:text="JUMLAH PENUMPANG"
+                        android:textAllCaps="true"
+                        android:textColor="@color/colorPrimary"
+                        android:textSize="19sp"
+                        android:textStyle="bold" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="Dewasa"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        android:textColor="#000000" />
+
+                    <Spinner
+                        android:id="@+id/dewasa"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp" />
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="8dp"
+                        android:text="Anak-anak"
+                        android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
+                        android:textColor="#000000" />
+
+                    <Spinner
+                        android:id="@+id/anak"
+                        android:layout_width="match_parent"
+                        android:layout_height="50dp"
+                        android:layout_marginBottom="8dp" />
+
+                </LinearLayout>
+
+            </androidx.cardview.widget.CardView>
+
+            <com.google.android.material.button.MaterialButton
+                android:id="@+id/book"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="8dp"
+                android:layout_marginRight="24dp"
+                android:text="Booking Sekarang"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                app:backgroundTint="#2F9FFF"
+                app:cornerRadius="50dp" />
+
+        </LinearLayout>
+
+    </ScrollView>
 
 </RelativeLayout>

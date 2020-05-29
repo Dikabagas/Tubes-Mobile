@@ -119,7 +119,7 @@ public class Holiday_page extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 perhitunganHarga();
-                if (sTempat == null && sTanggal != null && sDewasa != null) {
+                if (sTempat != null && sTanggal != null && sDewasa != null) {
                     AlertDialog dialog = new AlertDialog.Builder(Holiday_page.this)
                             .setTitle("Ingin booking kereta sekarang?")
                             .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
