@@ -19,7 +19,7 @@ import com.example.mytix.database.DataHelper;
 
 public class Register_page extends AppCompatActivity {
 
-    EditText txtName, txtPhone, txtUsername, txtPassword;
+    EditText txtName, txtUsername, txtPassword;
     Button btnDaftar;
     DataHelper dbHelper;
     SQLiteDatabase db;
