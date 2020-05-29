@@ -12,7 +12,7 @@
         <activity android:name=".Profile_page"></activity>
         <activity android:name=".Holiday_page" />
         <activity android:name=".History_page" />
-        <activity android:name=".Kereta_page" />
+        <activity android:name=".Pesawat_page" />
         <activity android:name=".Pesawat_page" />
         <activity android:name=".Drawer_home" />
         <activity android:name=".Register_page" />
