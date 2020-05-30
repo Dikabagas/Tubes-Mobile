@@ -1,13 +1,10 @@
 package com.example.mytix;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
 import android.text.InputType;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,20 +17,26 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
 
+import com.example.mytix.database.DataHelper;
+import com.example.mytix.session.SessionManager;
 
 import java.util.Calendar;
+import java.util.HashMap;
 
 public class Holiday_page extends AppCompatActivity {
     protected Cursor cursor;
+    DataHelper dbHelper;
+    SessionManager session;
 
     SQLiteDatabase db;
     Spinner spinTempat, spinDewasa, spinAnak;
 
     String email;
     int id_book;
-    public String sTempat, sTanggal, sDewasa, sAnak;
+    public String sTempat, sTanggal, sDewasa, sAnak, asal="liburan";
     int jmlDewasa, jmlAnak;
     int hargaDewasa, hargaAnak;
     int hargaTotalDewasa, hargaTotalAnak, hargaTotal;
@@ -45,6 +48,9 @@ public class Holiday_page extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_holiday_page);
+
+        dbHelper = new DataHelper(Holiday_page.this);
+        db = dbHelper.getReadableDatabase();
 
 
 
@@ -112,6 +118,9 @@ public class Holiday_page extends AppCompatActivity {
         etTanggal = findViewById(R.id.tanggal_liburan);
         etTanggal.setInputType(InputType.TYPE_NULL);
         etTanggal.requestFocus();
+        session = new SessionManager(getApplicationContext());
+        HashMap<String, String> user = session.getUserDetails();
+        email = user.get(SessionManager.KEY_EMAIL);
 
         setDateTimeField();
 
@@ -119,7 +128,7 @@ public class Holiday_page extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 perhitunganHarga();
-                if (sTempat == null && sTanggal != null && sDewasa != null) {
+                if (sTempat != null && sTanggal != null && sDewasa != null) {
                     AlertDialog dialog = new AlertDialog.Builder(Holiday_page.this)
                             .setTitle("Ingin booking kereta sekarang?")
                             .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
@@ -127,7 +136,7 @@ public class Holiday_page extends AppCompatActivity {
                                 public void onClick(DialogInterface dialog, int which) {
                                     try {
                                         db.execSQL("INSERT INTO TB_BOOK (asal, tujuan, tanggal, dewasa, anak) VALUES ('" +
-
+                                                asal+"','"+
                                                 sTempat + "','" +
                                                 sTanggal + "','" +
                                                 sDewasa + "','" +
