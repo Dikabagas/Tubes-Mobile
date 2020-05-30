@@ -10,6 +10,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.Toast;
 
@@ -118,7 +119,7 @@ public class Drawer_home extends AppCompatActivity implements NavigationView.OnN
     }
 
     public void btn_krt(View view) {
-        startActivity(new Intent(getApplicationContext(), Pesawat_page.class));
+        startActivity(new Intent(getApplicationContext(), Kereta_page.class));
     }
 
     public void btn_movie(View view) {

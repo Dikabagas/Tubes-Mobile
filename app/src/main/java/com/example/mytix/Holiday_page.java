@@ -23,18 +23,14 @@ import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.widget.Toolbar;
 
 
-import com.example.mytix.database.DataHelper;
-import com.example.mytix.session.SessionManager;
-
 import java.util.Calendar;
-import java.util.HashMap;
 
 public class Holiday_page extends AppCompatActivity {
     protected Cursor cursor;
-    DataHelper dbHelper;
+
     SQLiteDatabase db;
     Spinner spinTempat, spinDewasa, spinAnak;
-    SessionManager session;
+
     String email;
     int id_book;
     public String sTempat, sTanggal, sDewasa, sAnak;
@@ -50,12 +46,12 @@ public class Holiday_page extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_holiday_page);
 
-        dbHelper = new DataHelper(Holiday_page.this);
-        db = dbHelper.getReadableDatabase();
+
 
         final String[] tempat = {"Dufan (Premium)", "Taman Nusa Bali", "Jatim Park 3", "Jatim Park 2", "Jatim Park 1", "JungleLand Adventure Bogor"};
         final String[] dewasa = {"0", "1", "2", "3", "4", "5", "6", "7"};
         final String[] anak = {"0", "1", "2", "3", "4", "5", "6", "7"};
+
 
         spinTempat = findViewById(R.id.tmptlibur);
         spinDewasa = findViewById(R.id.dewasa);
@@ -72,6 +68,8 @@ public class Holiday_page extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapterAnak = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item, anak);
         adapterAnak.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinAnak.setAdapter(adapterAnak);
+
+
 
         spinTempat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -114,16 +112,14 @@ public class Holiday_page extends AppCompatActivity {
         etTanggal = findViewById(R.id.tanggal_liburan);
         etTanggal.setInputType(InputType.TYPE_NULL);
         etTanggal.requestFocus();
-        session = new SessionManager(getApplicationContext());
-        HashMap<String, String> user = session.getUserDetails();
-        email = user.get(SessionManager.KEY_EMAIL);
+
         setDateTimeField();
 
         btnBook.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 perhitunganHarga();
-                if (sTempat != null && sTanggal != null && sDewasa != null) {
+                if (sTempat == null && sTanggal != null && sDewasa != null) {
                     AlertDialog dialog = new AlertDialog.Builder(Holiday_page.this)
                             .setTitle("Ingin booking kereta sekarang?")
                             .setPositiveButton("Ya", new DialogInterface.OnClickListener() {

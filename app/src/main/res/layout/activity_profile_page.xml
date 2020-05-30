@@ -1,8 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent">
+    android:layout_height="match_parent"
+    tools:context=".Profile_page"
+    >
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tbProfile"
@@ -21,14 +24,16 @@
             android:layout_height="wrap_content"
             android:orientation="vertical">
 
-            <com.google.android.material.card.MaterialCardView
+            <androidx.cardview.widget.CardView
+                xmlns:android="http://schemas.android.com/apk/res/android"
+                xmlns:app="http://schemas.android.com/apk/res-auto"
+                xmlns:tools="http://schemas.android.com/tools"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
-                android:layout_margin="10dp"
-                app:cardCornerRadius="10dp"
-                app:cardElevation="3dp"
-                app:strokeColor="@color/colorPrimary"
-                app:strokeWidth="2dp">
+                app:cardCornerRadius="8dp"
+                app:cardElevation="4dp"
+                app:cardUseCompatPadding="true"
+                >
 
                 <RelativeLayout
                     android:layout_width="wrap_content"
@@ -83,26 +88,25 @@
 
                 </RelativeLayout>
 
-            </com.google.android.material.card.MaterialCardView>
+            </androidx.cardview.widget.CardView>
 
             <com.google.android.material.button.MaterialButton
-            android:id="@+id/history"
-            android:layout_width="match_parent"
-            android:layout_height="56dp"
-            android:layout_marginLeft="24dp"
-            android:layout_marginTop="300dp"
-            android:layout_marginRight="24dp"
-            android:text="Riwayat Transaksi"
-            android:textColor="#fff"
-            android:textSize="16sp"
-            android:theme="@style/Theme.MaterialComponents.Light"
-            android:onClick="btn_history"
-            app:backgroundTint="#2F9FFF"
-            app:cornerRadius="50dp"/>
+                android:id="@+id/history"
+                android:layout_width="match_parent"
+                android:layout_height="56dp"
+                android:layout_marginLeft="24dp"
+                android:layout_marginTop="300dp"
+                android:layout_marginRight="24dp"
+                android:text="Riwayat Transaksi"
+                android:textColor="#fff"
+                android:textSize="16sp"
+                android:theme="@style/Theme.MaterialComponents.Light"
+                android:onClick="btn_history"
+                app:backgroundTint="#2F9FFF"
+                app:cornerRadius="50dp"/>
 
             <com.google.android.material.button.MaterialButton
                 android:id="@+id/out"
-                android:onClick="btn_logout"
                 android:layout_width="match_parent"
                 android:layout_height="56dp"
                 android:layout_marginLeft="24dp"
@@ -113,7 +117,8 @@
                 android:textSize="16sp"
                 android:theme="@style/Theme.MaterialComponents.Light"
                 app:backgroundTint="#2F9FFF"
-                app:cornerRadius="50dp" />
+                app:cornerRadius="50dp"
+                android:onClick="handleLogout"/>
 
         </LinearLayout>
 
