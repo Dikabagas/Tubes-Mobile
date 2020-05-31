@@ -5,7 +5,7 @@
     <solid android:color="#5EAE9E" />
     <stroke
         android:width="5dip"
-        android:color="#448AFF" />
+        android:color="@color/colorPrimary" />
     <padding
         android:bottom="4dp"
         android:left="4dp"
