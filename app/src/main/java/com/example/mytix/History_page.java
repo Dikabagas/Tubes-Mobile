@@ -81,7 +81,7 @@ public class History_page extends AppCompatActivity {
             dewasa = cursor.getString(4);
             anak = cursor.getString(5);
             total = cursor.getString(10);
-            riwayat = "Berhasil melakukan booking untuk melakukan perjalanan dari " + asal + " menuju " + tujuan + " pada tanggal " + tanggal + ". " +
+            riwayat = "Berhasil melakukan booking untuk melakukan perjalanan " + asal + " menuju " + tujuan + " pada tanggal " + tanggal + ". " +
                     "Jumlah pembelian tiket dewasa sejumlah " + dewasa + " dan tiket anak-anak sejumlah " + anak + ".";
             hasil.add(new HistoryModel(id_book, tanggal, riwayat, total, R.drawable.profile));
         }

@@ -5,6 +5,7 @@
     android:id="@+id/activity_welcome"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".Pesawat_page">
 
     <androidx.appcompat.widget.Toolbar
@@ -17,7 +18,8 @@
     <ScrollView
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_below="@+id/tbPswt">
+        android:layout_below="@+id/tbPswt"
+        android:layout_marginBottom="10dp">
 
         <LinearLayout
             android:layout_width="match_parent"
@@ -25,7 +27,6 @@
             android:orientation="vertical">
 
             <TextView
-                android:layout_below="@+id/tbPswt"
                 android:text="TIKET PESAWAT"
                 android:textColor="#000"
                 android:layout_width="match_parent"
@@ -45,11 +46,11 @@
                 android:layout_height="wrap_content"
                 android:layout_below="@+id/textView2"
                 android:layout_alignParentStart="true"
-                android:layout_marginTop="45dp"
+                android:layout_marginTop="40dp"
                 android:text="Selamat Datang Pelanggan Terhormat"
                 android:textColor="#000"
                 android:layout_marginLeft="7dp"
-                android:textSize="19sp"
+                android:textSize="16sp"
                 android:textStyle="normal|bold" />
 
             <TextView
@@ -63,14 +64,14 @@
                 android:layout_alignParentLeft="true"
                 android:layout_alignParentStart="true"
                 android:layout_marginTop="10dp"
-                android:textSize="18sp" />
+                android:textSize="14sp" />
 
             <androidx.cardview.widget.CardView
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:layout_margin="5dp"
                 app:cardCornerRadius="10dp"
-                app:cardElevation="4dp"
+                app:cardElevation="5dp"
                 app:strokeColor="@color/colorPrimary"
                 app:strokeWidth="2dp">
 
@@ -101,7 +102,7 @@
                         android:textColor="#000000" />
 
                     <Spinner
-                        android:id="@+id/asal_terbang"
+                        android:id="@+id/asal"
                         android:layout_width="match_parent"
                         android:layout_height="50dp" />
 
@@ -115,11 +116,10 @@
                         android:textColor="#020202" />
 
                     <Spinner
-                        android:id="@+id/tujuan_terbang"
+                        android:id="@+id/tujuan"
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_weight="1" />
-
                 </LinearLayout>
             </androidx.cardview.widget.CardView>
 
@@ -150,7 +150,7 @@
                         android:textStyle="bold" />
 
                     <EditText
-                        android:id="@+id/tanggal_terbang"
+                        android:id="@+id/tanggal_berangkat"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:drawableStart="@drawable/ic_date_foreground"
@@ -159,9 +159,7 @@
                         android:textAppearance="@style/Base.TextAppearance.AppCompat.Small"
                         android:textColor="@color/colorPrimary"
                         android:textColorHint="#BACBCF" />
-
                 </LinearLayout>
-
             </androidx.cardview.widget.CardView>
 
             <androidx.cardview.widget.CardView
@@ -216,9 +214,7 @@
                         android:layout_width="match_parent"
                         android:layout_height="50dp"
                         android:layout_marginBottom="8dp" />
-
                 </LinearLayout>
-
             </androidx.cardview.widget.CardView>
 
             <com.google.android.material.button.MaterialButton
@@ -236,5 +232,10 @@
                 app:cornerRadius="50dp" />
 
         </LinearLayout>
+
     </ScrollView>
+
+
+
+
 </RelativeLayout>

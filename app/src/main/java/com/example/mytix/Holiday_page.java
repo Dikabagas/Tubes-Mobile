@@ -1,13 +1,10 @@
 package com.example.mytix;
 
-import androidx.appcompat.app.AppCompatActivity;
-
-import android.os.Bundle;
-
 import android.app.DatePickerDialog;
 import android.content.DialogInterface;
 import android.database.Cursor;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Bundle;
 import android.text.InputType;
 import android.view.MenuItem;
 import android.view.View;
@@ -20,8 +17,8 @@ import android.widget.Spinner;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AlertDialog;
+import androidx.appcompat.app.AppCompatActivity;
 import androidx.appcompat.widget.Toolbar;
-
 
 import com.example.mytix.database.DataHelper;
 import com.example.mytix.session.SessionManager;
@@ -32,12 +29,14 @@ import java.util.HashMap;
 public class Holiday_page extends AppCompatActivity {
     protected Cursor cursor;
     DataHelper dbHelper;
+    SessionManager session;
+
     SQLiteDatabase db;
     Spinner spinTempat, spinDewasa, spinAnak;
-    SessionManager session;
+
     String email;
     int id_book;
-    public String sTempat, sTanggal, sDewasa, sAnak;
+    public String sTempat, sTanggal, sDewasa, sAnak, asal="liburan";
     int jmlDewasa, jmlAnak;
     int hargaDewasa, hargaAnak;
     int hargaTotalDewasa, hargaTotalAnak, hargaTotal;
@@ -53,9 +52,12 @@ public class Holiday_page extends AppCompatActivity {
         dbHelper = new DataHelper(Holiday_page.this);
         db = dbHelper.getReadableDatabase();
 
+
+
         final String[] tempat = {"Dufan (Premium)", "Taman Nusa Bali", "Jatim Park 3", "Jatim Park 2", "Jatim Park 1", "JungleLand Adventure Bogor"};
         final String[] dewasa = {"0", "1", "2", "3", "4", "5", "6", "7"};
         final String[] anak = {"0", "1", "2", "3", "4", "5", "6", "7"};
+
 
         spinTempat = findViewById(R.id.tmptlibur);
         spinDewasa = findViewById(R.id.dewasa);
@@ -72,6 +74,8 @@ public class Holiday_page extends AppCompatActivity {
         ArrayAdapter<CharSequence> adapterAnak = new ArrayAdapter<CharSequence>(this, android.R.layout.simple_spinner_item, anak);
         adapterAnak.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         spinAnak.setAdapter(adapterAnak);
+
+
 
         spinTempat.setOnItemSelectedListener(new AdapterView.OnItemSelectedListener() {
             @Override
@@ -117,6 +121,7 @@ public class Holiday_page extends AppCompatActivity {
         session = new SessionManager(getApplicationContext());
         HashMap<String, String> user = session.getUserDetails();
         email = user.get(SessionManager.KEY_EMAIL);
+
         setDateTimeField();
 
         btnBook.setOnClickListener(new View.OnClickListener() {
@@ -131,7 +136,7 @@ public class Holiday_page extends AppCompatActivity {
                                 public void onClick(DialogInterface dialog, int which) {
                                     try {
                                         db.execSQL("INSERT INTO TB_BOOK (asal, tujuan, tanggal, dewasa, anak) VALUES ('" +
-
+                                                asal+"','"+
                                                 sTempat + "','" +
                                                 sTanggal + "','" +
                                                 sDewasa + "','" +

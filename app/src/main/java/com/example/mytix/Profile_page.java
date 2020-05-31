@@ -54,26 +54,8 @@ public class Profile_page extends AppCompatActivity {
         lblName.setText(name);
         lblEmail.setText(email);
 
-        btnLogout = findViewById(R.id.out);
-        btnLogout.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View arg0) {
-                AlertDialog dialog = new AlertDialog.Builder(Profile_page.this)
-                        .setTitle("Anda yakin ingin keluar ?")
-                        .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
-                            @Override
-                            public void onClick(DialogInterface dialog, int which) {
-                                finish();
-                                session.logoutUser();
-                            }
-                        })
-                        .setNegativeButton("Tidak", null)
-                        .create();
-                dialog.show();
-            }
-        });
-
         setupToolbar();
+
     }
 
     private void setupToolbar() {
@@ -94,5 +76,22 @@ public class Profile_page extends AppCompatActivity {
 
     public void btn_history(View view) {
         startActivity(new Intent(getApplicationContext(), History_page.class));
+    }
+
+    public void handleLogout(View view) {
+
+        AlertDialog dialog = new AlertDialog.Builder(Profile_page.this)
+                .setTitle("Anda yakin ingin keluar ?")
+                .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
+                    @Override
+                    public void onClick(DialogInterface dialog, int which) {
+                        finish();
+                        session.logoutUser();
+                    }
+                })
+                .setNegativeButton("Tidak", null)
+                .create();
+        dialog.show();
+
     }
 }

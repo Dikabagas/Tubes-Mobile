@@ -5,11 +5,12 @@ xmlns:tools="http://schemas.android.com/tools"
 android:layout_width="match_parent"
 android:layout_height="match_parent"
 tools:context=".History_page">
+
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/tbHistory"
         android:layout_width="match_parent"
         android:layout_height="?attr/actionBarSize"
-        android:background="#448AFF"
+        android:background="@drawable/bg_wave"
         android:theme="@style/ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <RelativeLayout
