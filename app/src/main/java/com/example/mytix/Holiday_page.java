@@ -52,12 +52,9 @@ public class Holiday_page extends AppCompatActivity {
         dbHelper = new DataHelper(Holiday_page.this);
         db = dbHelper.getReadableDatabase();
 
-
-
-        final String[] tempat = {"Dufan (Premium)", "Taman Nusa Bali", "Jatim Park 3", "Jatim Park 2", "Jatim Park 1", "JungleLand Adventure Bogor"};
+        final String[] tempat = {"Dufan (Premium)", "Taman Nusa Bali", "Jatim Park 3", "Jatim Park 2", "Jatim Park 1", "Jungle Land Adventure Bogor"};
         final String[] dewasa = {"0", "1", "2", "3", "4", "5", "6", "7"};
         final String[] anak = {"0", "1", "2", "3", "4", "5", "6", "7"};
-
 
         spinTempat = findViewById(R.id.tmptlibur);
         spinDewasa = findViewById(R.id.dewasa);

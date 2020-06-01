@@ -135,5 +135,6 @@ public class Drawer_home extends AppCompatActivity implements NavigationView.OnN
     }
 
     public void btn_about(View view) {
+        startActivity(new Intent(getApplicationContext(), About.class));
     }
 }
