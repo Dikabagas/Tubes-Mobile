@@ -1,11 +1,11 @@
 package com.example.mytix;
 
 import android.app.Activity;
-import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
 import android.graphics.Color;
 import android.os.Build;
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.Window;
 import android.view.WindowManager;
@@ -14,6 +14,7 @@ import android.widget.EditText;
 import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.appcompat.widget.Toolbar;
 
 import com.example.mytix.database.DataHelper;
 
@@ -66,6 +67,24 @@ public class Register_page extends AppCompatActivity {
                 }
             }
         });
+
+        setupToolbar();
+    }
+
+    private void setupToolbar() {
+        Toolbar toolbar = findViewById(R.id.tbAbout);
+        toolbar.setTitle("Register");
+        setSupportActionBar(toolbar);
+        getSupportActionBar().setDisplayHomeAsUpEnabled(true);
+    }
+
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            finish();
+            return true;
+        }
+        return super.onOptionsItemSelected(item);
     }
 
     public static void setWindowFlag(Activity activity, final int bits, boolean on) {
@@ -78,10 +97,6 @@ public class Register_page extends AppCompatActivity {
             winParams.flags &= ~bits;
         }
         win.setAttributes(winParams);
-    }
-
-    public void btn_back(View view) {
-        startActivity(new Intent(getApplicationContext(), Login_page.class));
     }
 
 }
