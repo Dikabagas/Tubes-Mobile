@@ -36,7 +36,7 @@ public class Pesawat_page extends AppCompatActivity {
     SessionManager session;
     String email;
     int id_book;
-    public String sMaskapai, sDestinasi, sTanggal, sDewasa, sAnak;
+    public String sMaskapai , sDestinasi, sTanggal, sDewasa, sAnak;
     int jmlDewasa, jmlAnak;
     int hargaDewasa, hargaAnak;
     int hargaTotalDewasa, hargaTotalAnak, hargaTotal;
@@ -142,7 +142,7 @@ public class Pesawat_page extends AppCompatActivity {
                 perhitunganHarga();
                 if (sMaskapai != null && sDestinasi != null && sTanggal != null && sDewasa != null) {
                     AlertDialog dialog = new AlertDialog.Builder(Pesawat_page.this)
-                            .setTitle("Ingin booking kereta sekarang?")
+                            .setTitle("Ingin booking Pesawat sekarang?")
                             .setPositiveButton("Ya", new DialogInterface.OnClickListener() {
                                 @Override
                                 public void onClick(DialogInterface dialog, int which) {
@@ -185,7 +185,7 @@ public class Pesawat_page extends AppCompatActivity {
     }
 
     private void setupToolbar() {
-        Toolbar toolbar = findViewById(R.id.liburan);
+        Toolbar toolbar = findViewById(R.id.tbPswt);
         toolbar.setTitle("Form Booking");
         setSupportActionBar(toolbar);
         getSupportActionBar().setDisplayHomeAsUpEnabled(true);
